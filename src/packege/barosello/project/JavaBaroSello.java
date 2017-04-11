@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class JavaBaroSello {
 
 	private static BaroSello baroSelloObj = new BaroSello();
-
+	private static Nardo NardoObj = new Nardo();
+	
 	public static void main(String[] args) {
 		String valueInputString;
 		int valueInputInt = 0;
@@ -29,6 +30,7 @@ public class JavaBaroSello {
             		}
             		
             		arrayList = stepOne(arrayList);
+            		arrayList = stepTwo(arrayList);
             		String result = arrayList.toString().replaceAll("\\[|\\]", ""); 
             		System.out.println(result);
             		
@@ -50,5 +52,11 @@ public class JavaBaroSello {
 		
 		return baroSelloObj.multiple(val);
 	}
+	
+	public static ArrayList<String> stepTwo(ArrayList<String> val){
+		
+		return NardoObj.multiSeven(val);
+	}
+	
 
 }
