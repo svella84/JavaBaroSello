@@ -31,8 +31,9 @@ public class JavaBaroSello {
             		
             		arrayList = stepOne(arrayList);
             		arrayList = stepTwo(arrayList);
-            		String result = arrayList.toString().replaceAll("\\[|\\]", ""); 
-            		System.out.println(result);
+//            		String result = arrayList.toString().replaceAll("\\[|\\]", ""); 
+//            		System.out.println(result);
+            		stepThree(arrayList);
             		
                 	bError = false;
             	} else {
@@ -57,6 +58,19 @@ public class JavaBaroSello {
 		
 		return NardoObj.multiSeven(val);
 	}
+	
+	public static void stepThree(ArrayList<String> val){
+		
+		ArrayList<String> arrayResult = new ArrayList<String>();
+		
+		arrayResult = NardoObj.colorBaro(val);
+		arrayResult = NardoObj.colorSello(arrayResult);
+		arrayResult = NardoObj.colorBaroSello(arrayResult);
+		arrayResult = NardoObj.colorNardo(arrayResult);
+
+		NardoObj.printArrayList(arrayResult);
+	}
+	
 	
 
 }
