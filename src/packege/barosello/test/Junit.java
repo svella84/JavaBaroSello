@@ -24,5 +24,19 @@ public class Junit {
 		return arrayList;
 		
 	}
+	
+	public static ArrayList<String> stepTwo(int val) {
+		ArrayList<String> arrayList = new ArrayList<String>();
 
+    	for(int i=0 ; i<=val ; i++) {
+			arrayList.add(String.valueOf(i));
+		}
+				
+		for(int i = 0; i < arrayList.size(); i++){
+			if(i != 0 && i % 7 == 0){
+				arrayList.set(i, "Nardo");
+			}
+		}
+		return arrayList;
+	}
 }
