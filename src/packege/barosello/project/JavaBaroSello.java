@@ -34,6 +34,7 @@ public class JavaBaroSello {
 //            		String result = arrayList.toString().replaceAll("\\[|\\]", ""); 
 //            		System.out.println(result);
             		stepThree(arrayList);
+            		stepFour(arrayList);
             		
                 	bError = false;
             	} else {
@@ -69,6 +70,12 @@ public class JavaBaroSello {
 		arrayResult = NardoObj.colorNardo(arrayResult);
 
 		NardoObj.printArrayList(arrayResult);
+	}
+	
+	public static void stepFour(ArrayList<String> val){
+		
+		NardoObj.printOnlyBaroSello(val);
+		
 	}
 	
 	

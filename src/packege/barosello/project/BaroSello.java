@@ -1,6 +1,8 @@
 package packege.barosello.project;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class BaroSello {
 	
@@ -53,5 +55,17 @@ public class BaroSello {
 		String result = null;
 		result = baroSello.toString().replaceFirst("\\[", "").replaceFirst("\\]", "");
 		System.out.println(result);
+	}
+	
+	public void printOnlyBaroSello(ArrayList<String> arrayList) {
+		Map<Integer, String> baroSello = new TreeMap<Integer, String>();
+
+		for(int i = 0; i < arrayList.size(); i++){
+			if(arrayList.get(i).equals("BaroSello") || arrayList.get(i).equals(ANSI_BLUE + "BaroSello" + ANSI_RESET)){
+				baroSello.put(i, "BaroSello");
+			}
+		}
+		
+		System.out.println("BaroSello: " + baroSello.keySet());
 	}
 }
