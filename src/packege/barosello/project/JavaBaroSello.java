@@ -35,6 +35,7 @@ public class JavaBaroSello {
 //            		System.out.println(result);
             		stepThree(arrayList);
             		stepFour(arrayList);
+            		stepFive(arrayList);
             		
                 	bError = false;
             	} else {
@@ -78,6 +79,10 @@ public class JavaBaroSello {
 		
 	}
 	
+	public static void stepFive(ArrayList<String> val){
+		 
+		NardoObj.printInNewOutput(val);
+	}
 	
 
 }

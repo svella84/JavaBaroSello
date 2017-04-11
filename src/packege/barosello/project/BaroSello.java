@@ -1,8 +1,13 @@
 package packege.barosello.project;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class BaroSello {
 	
@@ -67,5 +72,41 @@ public class BaroSello {
 		}
 		
 		System.out.println("BaroSello: " + baroSello.keySet());
+	}
+	
+	public void printInNewOutput(ArrayList<String> arrayList){
+		Map<Integer, String> baro = new TreeMap<Integer, String>();
+		Map<Integer, String> sello = new TreeMap<Integer, String>();
+
+		for(int i = 0; i < arrayList.size(); i++){
+			if(arrayList.get(i).equals("Baro") || arrayList.get(i).equals(ANSI_GREEN + "Baro" + ANSI_RESET)){
+				baro.put(i, "Baro");
+			} else if (arrayList.get(i).equals("Sello") || arrayList.get(i).equals(ANSI_RED + "Sello" + ANSI_RESET)){
+				sello.put(i, "Sello");
+			}
+		}
+		
+		System.out.println("Sello: " + sello.keySet());
+		
+		JFrame frame = new JFrame("Baro & Sello JFrame");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel contentPane = new JPanel();
+        contentPane.setOpaque(true);
+        contentPane.setBackground(Color.WHITE);
+        contentPane.setLayout(null);
+
+        JLabel label = new JLabel(
+        		"<html>Baro: " + baro.keySet() + "<br>Sello: " + sello.keySet() + "</html>"
+                                    , JLabel.CENTER);
+        label.setSize(600, 380);
+        label.setLocation(10, 10);
+
+        contentPane.add(label);
+
+        frame.setContentPane(contentPane);
+        frame.setSize(680, 420);
+        frame.setLocationByPlatform(true);
+        frame.setVisible(true);
 	}
 }
